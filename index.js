@@ -1,13 +1,15 @@
-const cart = document.querySelector('.show-cart');
-const addCart = document.querySelector('.add-to-cart');
-const twoAddCart = document.querySelector('.increase-by-two');
-const threeAddCart = document.querySelector('.increase-by-three');
-const fourAddCart = document.querySelector('.increase-by-four');
-const fiveAddCart = document.querySelector('.increase-by-five');
-const twoSubstractCart = document.querySelector('.substract-by-two');
-const threeSubstractCart = document.querySelector('.substract-by-three');
+const cart = document.querySelector('.show-cart').addEventListener('click', cardQuantity);
+const addCart = document.querySelector('.add-to-cart').addEventListener('click', addToCart);
+const twoAddCart = document.querySelector('.increase-by-two').addEventListener('click', addTwoToCart);
+const threeAddCart = document.querySelector('.increase-by-three').addEventListener('click', addThreeToCart);
+const fourAddCart = document.querySelector('.increase-by-four').addEventListener('click', addFourToCart);
+const fiveAddCart = document.querySelector('.increase-by-five').addEventListener('click', addFiveToCart);
+const twoSubstractCart = document.querySelector('.substract-by-two').addEventListener('click', substractTwoFromCart);
+const threeSubstractCart = document.querySelector('.substract-by-three').addEventListener('click', substractThreeFromCart);
 const resetCartt = document.querySelector('.reset-cart');
 
+
+// resetCartt.addEventListener('click', ResetCart)
 let cartQuantity = 0;
 
 
@@ -15,44 +17,48 @@ function cardQuantity(){
     console.log(`Cart Quantity: ${cartQuantity}`)
 };
 
+function updateCartQuantity(value){
+    if(cartQuantity + value > 10){
+        alert("This cart is full, it can only contain 10 items")
+    }else if(cartQuantity + value < 0){
+        alert("Not enough items in the cart")
+    }else{
+        cartQuantity += value
+        console.log(`Cart Quantity: ${cartQuantity}`)
+    }
+    
+}
+
 function addToCart(){
-    (cartQuantity >= 10) ? alert("This cart is full"): cartQuantity++
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(1)
 }
 
 function addTwoToCart(){
-    (cartQuantity + 2 > 10) ? alert("This cart is full"): cartQuantity += 2
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(2)
 }
 
 function addThreeToCart(){
-    (cartQuantity + 3 > 10) ? alert("This cart is full"): cartQuantity += 3
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(3)
 }
 
 function addFourToCart(){
-    (cartQuantity + 4 > 10) ? alert("This cart is full"): cartQuantity += 4
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(4)
 }
 
 function addFiveToCart(){
-    (cartQuantity + 5 > 10) ? alert("This cart is full"): cartQuantity += 5
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(5)
 }
 
 function removeFromCart(){
-    (cartQuantity - 1 < 0) ? alert("No item in the cart"): cartQuantity--
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(-1)
 }
 
 function substractTwoFromCart(){
-    (cartQuantity - 2 < 0) ? alert("Not enough items in the cart"): cartQuantity -= 2
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(-2)
 }
 
 function substractThreeFromCart(){
-    (cartQuantity - 3 < 0) ? alert("Not enough items in the cart"): cartQuantity -= 3
-    console.log(`Cart Quantity: ${cartQuantity}`)
+    updateCartQuantity(-3)
 }
 
 function resetCart(){
@@ -62,12 +68,4 @@ function resetCart(){
 }
 
 
-cart.addEventListener('click', cardQuantity);
-addCart.addEventListener('click', addToCart)
-twoAddCart.addEventListener('click', addTwoToCart)
-threeAddCart.addEventListener('click', addThreeToCart)
-fourAddCart.addEventListener('click', addFourToCart)
-fiveAddCart.addEventListener('click', addFiveToCart)
-twoSubstractCart.addEventListener('click', substractTwoFromCart)
-threeSubstractCart.addEventListener('click', substractThreeFromCart)
-// resetCartt.addEventListener('click', ResetCart)
+
