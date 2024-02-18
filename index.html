@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <div>Adults Plain Cotton T-shirt</div>
+                <p>Price: $7.99</p>
+                <button class="btn added-btn" onclick='alert("Added")'>Add to Cart</button>
+                <button class="btn purchased-btn" onclick='alert("Loading"); alert("Purchased")'>Buy Now</button>
+            </div>
+        </section>
+        <br>
+        <section>
+            <div>
+                <h3>Cart Quantity</h3>
+                <button class="btn show-cart">Show Quantity</button>
+                <button class="btn add-to-cart">Add to Cart</button>
+                <button class="btn increase-by-two">+2</button>
+                <button class="btn increase-by-three">+3</button>
+                <button class="btn increase-by-four">+4</button>
+                <button class="btn increase-by-five">+5</button>
+                <button class="btn remove-from-cart" onclick=removeFromCart()>Remove From Cart</button>
+                <button class="btn substract-by-two">-2</button>
+                <button class="btn substract-by-three">-3</button>
+                <button class="btn reset-cart" onclick=resetCart()>Reset Cart</button>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

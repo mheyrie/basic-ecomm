@@ -1,0 +1,22 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn{
+    padding: 5px;
+    border: 1px solid red;
+}
+
+button{
+           
+        &.added-btn{
+            background-color: yellow;
+            border: 3px solid black;
+        }
+
+        &.purchased-btn{
+            background-color: orange;
+            border: 3px solid black;
+        }
+
+    }
